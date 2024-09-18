@@ -1,0 +1,6 @@
+.list-card .item{
+    margin: 20px;
+}
+.list-card .item:hover{
+    transform: scale(1.2);
+}
