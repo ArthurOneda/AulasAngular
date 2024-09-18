@@ -1,0 +1,14 @@
+<form action="" [formGroup]="userForm" (submit)="addUser()">
+    <label for="name">Nome: </label>
+    <input type="text" id="name" formControlName="name" placeholder="Nome">
+    <label for="email">Email: </label>
+    <input type="text" id="email" formControlName="email" placeholder="exemplo@exemplo.com">
+    <button type="submit">Cadastrar</button>
+</form>
+@if (usuarios) {
+    <h1>Lista Usuários</h1>
+    <div *ngFor="let item of usuarios">
+        <app-user [user]="item"></app-user>
+        <button (click)="deleteUser(item.id!)">❌</button>
+    </div>
+}

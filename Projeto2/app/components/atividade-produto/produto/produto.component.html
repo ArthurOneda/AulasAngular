@@ -1,0 +1,20 @@
+<form action="" [formGroup]="produtoForm" (submit)="addProduto()">
+    <label for="name">Nome do Produto: </label>
+    <input type="text" id="name" formControlName="name" placeholder="Nome do Produto">
+    <label for="quantity">Quantidade: </label>
+    <input type="number" id="quantity" formControlName="quantity" placeholder="Quantidade">
+    <label for="price">Preço: </label>
+    <input type="number" id="price" formControlName="price" placeholder="Preço">
+    <button type="submit">Cadastrar</button>
+    <button *ngIf="updateAvaliable" type="button" (click)="updateProduto()">Atualizar</button>
+</form>
+@if (produtos) {
+    <h1>Lista Produtos</h1>
+    <div class="produtos" cdkDropList>
+        <div *ngFor="let item of produtos" cdkDrag>
+            <app-lista-produtos [produto]="item"></app-lista-produtos>
+            <button (click)="deleteProduto(item.id!)">❌</button>
+            <button (click)="onEdit(item)">Atualizar</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,13 @@
+.listaprod{
+    display: flex;
+    width: 550px;
+    justify-content: space-around;
+    background-color: rgb(39, 38, 38);
+    height: 45px;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.listaprod .id{
+    text-decoration: underline;
+}
